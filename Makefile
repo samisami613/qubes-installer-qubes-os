@@ -111,8 +111,10 @@ RPMS = \
 	rpm/x86_64/anaconda*-$(ANACONDA_VERSION)-*.rpm \
 	rpm/x86_64/firstboot-$(FIRSTBOOT_VERSION)-*.rpm
 
-update-repo:
+update-repo-installer:
 	@ln -f $(RPMS) yum/installer/rpm/
+
+update-repo:
 	@echo "--> Updating Installer repos..."
 	@(cd yum && ./update_repo.sh)
 
@@ -125,7 +127,7 @@ update-repo-current-testing:
 update-repo-unstable:
 	ln -f $(RPMS) ../yum/current-release/unstable/dom0/rpm/
 
-iso:
+iso: update-repo
 	ln -sf `pwd` /tmp/qubes-installer
 	createrepo -q -g ../../conf/comps-qubes.xml --update yum/qubes-dom0
 	mkdir -p work
