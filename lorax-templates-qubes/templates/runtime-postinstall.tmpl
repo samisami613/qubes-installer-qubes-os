@@ -120,7 +120,7 @@ symlink ../run/install mnt/install
 append etc/depmod.d/dd.conf "search updates built-in"
 
 ## include additional modules in initramfs
-append etc/dracut.conf.d/extra-install-modules.conf "add_drivers+=' ehci-pci '"
+append etc/dracut.conf.d/extra-install-modules.conf "add_drivers+=' ehci-pci xhci-hcd '"
 append etc/dracut.conf.d/extra-install-modules.conf "omit_dracutmodules+=' multipath '"
 
 ## make lvm auto-activate
