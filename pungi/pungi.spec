@@ -33,7 +33,7 @@ A tool to create anaconda based installation trees/isos of a set of rpms.
 %prep
 %setup -q
 
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 #%%patch3 -p1
