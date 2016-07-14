@@ -406,7 +406,7 @@ class QubesOsSpoke(FirstbootOnlySpokeMixIn, NormalSpoke):
             else:
                 self.qubes_user = qubes_users[0]
 
-            if self.check_advanced.get_active():
+            if self.check_advanced.get_selected():
                 return
 
             errors = []
